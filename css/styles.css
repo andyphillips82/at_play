@@ -1,0 +1,197 @@
+html {
+    height: 100%;
+}
+body {
+  background-color: #000;
+  background-image: url("/images/at_play_bg.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+
+}
+span.main_bg_logo {
+  background-image: url("/images/at_play_logo.png");
+  background-repeat: no-repeat;
+    background-size:85%;
+  height: 100%;
+  left: 0;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    display: none;
+
+}
+form {
+    position: absolute;
+    background-color: #fff;
+    width: 328px;
+    top: 32%;
+    left: 20%;
+}
+.content_container {
+        padding: 20px 20px 10px 20px;
+
+}
+
+input {
+  border: 1px solid #e2e2e2;
+  font-size: 14px;
+  height: 30px;
+  margin-right: 10px;
+  margin-top: 15px;
+  padding: 2px 2px 2px 4px;
+  width: 128px;
+}
+input[name="email"],input[name="last"] {
+    margin-right: 0px;
+}
+input[name="email"] {
+    width: 280px;
+}
+
+button {
+    width: 285px;
+    font-size: 16px;
+    height: 36px;
+    text-transform: uppercase;
+    background: #8d8d8d;
+    border: 1px solid #8a8a8a;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #000;
+    border: 1px solid #232323;
+}
+
+.error {
+    display: block;
+    font-size: 12px;
+    color: red;
+    margin-top: 10px;
+}
+#myform .content_container .cta {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: -0.2px;
+  margin-left: 0;
+}
+#myform .mini_img {
+  float: right;
+  height: 29px;
+  margin-right: 0;
+  margin-top: -5px;
+}
+
+#myform p {
+  bottom: 0;
+  font-size: 14px;
+  margin: 20px 0 10px 0;
+  text-align: center;
+}
+
+.social {
+    height: 60px;
+    width: 100%;
+    background-color: #8d8d8d;
+    margin: 40px 0px 110px 0px ;
+}
+
+.social span {
+  background: none repeat scroll 0 0 #fff;
+  border-radius: 30px;
+  color: #8c8c8c;
+  cursor: pointer;
+  float: left;
+  font-size: 30px;
+  height: 42px;
+  /*margin-left: 16px;*/
+  margin-left: 18px;
+  padding-top: 18px;
+  text-align: center;
+  transition: background-color 0.3s ease 0s;
+  vertical-align: middle;
+  width: 60px;
+}
+
+.social i {
+    font-size: 28px;
+    color: #8c8c8c;
+}
+.social span:hover i {
+    color: #fff;
+}
+
+.social .facebook:hover {
+    background-color: #3b5998;
+}
+.social .twitter:hover {
+    background-color: #4099FF;
+}
+.social .google:hover {
+    background-color: #F90101;
+}
+.social .email:hover {
+    background-color: #ff9f15;
+}
+
+@media (max-width: 1024px) {
+  form  {
+    top: 25%;
+    left: 15%;
+    }
+}
+@media (max-width: 768px) {
+  span.main_bg_logo {
+    background-size: 100%;
+  }
+  form  {
+    top: 20%;
+    left: 5%;
+    }
+}
+@media (max-width: 680px) {
+  .social span {
+    padding-top: 15px;
+    height: 45px;
+  }
+  span.main_bg_logo {
+    background-size: 100%;
+  }
+  form  {
+    width: 331px;
+    top: 30%;
+    left: 5%;
+    }
+}
+@media (max-width: 480px) {
+  span.main_bg_logo {
+    background-size: 100%;
+  }
+  form  {
+    top: 20%;
+    left: 5%;
+    }
+}
+
+@media (max-width: 320px) {
+  span.main_bg_logo {
+    background-size: 100%;
+  }
+  form  {
+    top: 20%;
+    left: 0%;
+    }
+}

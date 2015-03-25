@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+    <head>
+        <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/images/favicons/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/images/favicons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:image" content="/images/share-logo.jpg" />
+        
+        <title>at play</title>
+        <meta name="description" content="The world's first user-generated learning library.">
+    </head>
+    <body>
+        <span class="main_bg_logo" src="/images/at_play_logo.png" alt="At Play"></span>
+
+        <h1>The world's first user-generated learning library</h1>
+        <form id="myform" action="post.php">
+            <div class="content_container">
+                <span class="cta">sign up for updates from </span><img class="mini_img" src="/images/at_play_mini.png" alt="At Play"/>
+                <span class="error"></span>    
+                <input type="text" name="first" placeholder="First name..."/>
+                <input type="text" name="last" placeholder="Last name..."/>
+                <input required type="email" name="email" placeholder="Enter your email..."/>
+                <button type="submit" value="submit">Submit</button>
+            </div>
+            
+            <div class="social">
+                <a href="http://facebook.com/atplaysystems" target="blank"><span class="facebook"><i class="fa fa-facebook"></i></span></a>
+                <a href="http://twitter.com/atplaysystems" target="blank"><span class="twitter"><i class="fa fa-twitter"></i></span></a>
+                <a href="https://plus.google.com/u/0/101445956515235972325/posts" target="blank"><span class="google"><i class="fa fa-google-plus"></i></span></a>
+                <span class="email"><a href="mailto:info@atplay.io" target="blank"><i class="fa fa-envelope-o"></i></a></span>
+            </div>
+            <p>&copy; at play systems inc. all rights reserved</p>
+        </form>
+        <script type="text/javascript">
+            $(function() {
+                $("#myform").on("submit", function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: $(this).attr("action"),
+                        type: 'POST',
+                        data: $(this).serialize(),
+                        beforeSend: function() {
+                        },
+                        error: function (data) {
+                            $(".error").html('* '+data['message']);
+                        },
+                        success: function(data) {
+                            data = $.parseJSON(data);
+                            if (data['status'] == 'error') {                    
+                                $(".error").hide().html('* '+data['message']).fadeIn();
+                            } else if (data['status'] == 'success') {
+                                $('.content_container').hide().html(data['message']).fadeIn();
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
